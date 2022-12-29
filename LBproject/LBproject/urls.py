@@ -18,7 +18,10 @@ from django.urls import path
 from LB import views
 
 urlpatterns = [
-    path('',views.LBdisplay,name="leaderboard"),
+    path('',views.Home,name="Home"),
     path('insert/',views.Insert,name="Insert"),
+    path('disqualify/',views.disqualify,name="Disqualify"),
+    path('update/',views.Update,name="Update"),
+    path('leaderboard/',views.LBdisplay,name="leaderboard"),
     path('admin/', admin.site.urls),
 ]

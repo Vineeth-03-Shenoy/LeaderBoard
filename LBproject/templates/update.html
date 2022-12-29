@@ -12,7 +12,7 @@
     {% block content %}
     <center>
     <div class="card center spacer">
-        <h1 class="title text-center">Register</h1>
+        <h1 class="title text-center">Update</h1>
         <form method="post" action="" class="login-form spacer" id="inputMember">
             {% csrf_token %} 
             <div class="input-group">
@@ -23,19 +23,30 @@
                 type="text", 
                 class="form-input" , 
                 placeholder="Enter TeamNumber" , 
-                maxlength='30', 
-                minlength='2'>
+                maxlength='2', 
+                minlength='1'>
             </div>
             <div class="input-group">
                 <input 
                 required="", 
-                name="Name", 
-                id="Name", 
+                name="Points", 
+                id="Points", 
                 type="text", 
                 class="form-input" , 
-                placeholder="Enter Name" , 
+                placeholder="Enter Points" , 
                 maxlength='30', 
-                minlength='2'>
+                minlength='1'>
+            </div>
+            <div class="input-group">
+                <input 
+                required="", 
+                name="Credits", 
+                id="Credits", 
+                type="text", 
+                class="form-input" , 
+                placeholder="Enter Credits" , 
+                maxlength='3', 
+                minlength='1'>
             </div>
             <input type="submit" class="btn" value="SUBMIT">
         </form>
