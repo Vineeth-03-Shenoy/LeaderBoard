@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Board
+from django.db.models import F
 
 # Create your views here.
 def LBdisplay(request):
-    Teams = Board.objects.all().order_by('Points')
+    Teams = Board.objects.all().order_by('-Points')
     return render(request, "leaderboardpage.html", {"Teams":Teams})
 
 
@@ -35,4 +36,32 @@ def disqualify(request):
     return render(request, "disqualify.html")
 
 def Update(request):
+    if request.method=='POST':
+        TeamNumber=request.POST['TeamNumber']
+        Points=request.POST['Points']
+        Credits=request.POST['Credits']
+
+        print(TeamNumber,Points,Credits)
+        
+        ins = Board.objects.get(TeamNumber=TeamNumber)
+        if Points[0]=='+':
+            ins.Points = F('Points') + int(Points[1:len(Points)])
+        elif Points[0]=='-':
+            ins.Points = F('Points') - int(Points[1:len(Points)])
+        elif Points[0]=='*':
+            ins.Points = F('Points') * int(Points[1:len(Points)])
+        else:
+            print("PLEASE ASSIGN A OPERATOR")
+
+        if Credits[0]=='+':
+            ins.Credits = F('Credits') + int(Credits[1:len(Credits)])
+        elif Credits[0]=='-':
+            ins.Credits = F('Credits') - int(Credits[1:len(Credits)])
+        elif Credits[0]=='*':
+            ins.Credits = F('Credits') * int(Credits[1:len(Credits)])
+        else:
+            print("PLEASE ASSIGN A OPERATOR")
+
+        ins.save()
+
     return render(request, "update.html")
