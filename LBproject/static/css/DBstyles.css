@@ -5,9 +5,9 @@
 
 .main{
     width: 100%;
-    background-image: url("../images/BG2.jpg");
+    background-image: url("../images/BG.png");
     background-position: center;
-    background-size: cover;
+    background-size:contain;
     height: 100%;
 }
 
@@ -66,7 +66,7 @@
     background: #ff7200;
     border: 2px solid #ff7200;
     margin-top: auto;
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 15px;
     border-bottom-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -74,7 +74,7 @@
     cursor: pointer;
 }
 .btn:hover{
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 .btn:focus{
     outline: none;
@@ -125,10 +125,10 @@
 .cardLB{
     border-radius: 10px;
     font-size:large;
-    box-shadow: 0 0 20px 8px rgba(0,0,0,0.1);
-    width: 75%;
+    width: 50%;
     min-width: 320px;
-    padding: 5%;
+    height:100%;
+    padding: 2%;
 }
   
 .title{
