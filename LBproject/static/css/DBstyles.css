@@ -20,7 +20,7 @@
 }
 
 .table {
-	width: 110%;
+	width: 100%;
 }
 
 .table-header {
@@ -125,8 +125,7 @@
 .cardLB{
     border-radius: 10px;
     font-size:large;
-    width: 50%;
-    min-width: 320px;
+    width: 80%;
     height:100%;
     padding: 2%;
 }
